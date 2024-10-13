@@ -5,7 +5,7 @@
 <head>
     <title>Registros</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="resources/sweetalert2/sweetalert2.css">
 </head>
 <body style="background-color: #dddcdc;">
 <section class='container-sm m-3 p-5 rounded shadow' style="background-color: white; height: auto;">
@@ -42,13 +42,55 @@
                 <td>${reg.getFecha_nac()}</td>
                 <td class="text-center">
                     <a class="btn btn-warning" href="${context}/Controller?op=obtenerRegistro&id=${reg.getId_persona()}">Editar</a>
-                    <button class="btn btn-danger" onclick="confirmacionEliminar('${reg.getId_persona()}')">Eliminar</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#EliminarModal" onclick="confirmacionEliminar('${reg.getId_persona()}')">
+                        Eliminar
+                    </button>
                 </td>
             </tr>
         </c:forEach>
     </c:if>
     </tbody>
 </table>
+
+    <div class="modal fade" id="EliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eliminarModalLabel">Eliminar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Seguro que desea eliminar el registro?
+                </div>
+                <div class="modal-footer">
+                    <form enctype="multipart/form-data" id="form-del" name="form-del" action="${context}/Servlet_Controller" method="post">
+                        <input type="hidden" name="op" value="eliminar" />
+                        <input type="hidden" name="id" id="idRegistro" value="0" />
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <input type="submit" id="btn-ok" name="submit" class="btn btn-success" form="form-del" value="Aceptar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="resources/sweetalert2/sweetalert2.js"></script>
+<script src="resources/js/action.js"/></script>
+<script>
+    <c:if test = "${not empty ok and ok != false}">
+    sweetAlert("¡Exito!", "<c:out value="${mensaje}"></c:out>", "success");
+    <c:set var="ok" value="false" scope="session"/>
+    </c:if>
+
+    <c:if test = "${not empty noCompletado and noCompletado != false}">
+    sweetAlert("¡Error!", "<c:out value="${mensaje}"></c:out>", "error");
+    <c:set var="noCompletado" value="false" scope="session"/>
+    </c:if>
+</script>
 </body>
 </html>

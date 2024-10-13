@@ -47,7 +47,9 @@ public class Servlet_Controller extends HttpServlet {
                 nuevoRegistro(request, response);
             } else if (operacion.equals("insertarRegistro")) {
                 insertarRegistro(request, response);
-            }else {
+            } else if (operacion.equals("eliminar")) {
+                eliminarRegistro(request, response);
+            } else {
                 request.getRequestDispatcher("404.jsp").forward(request, response);
             }
 
@@ -83,6 +85,8 @@ public class Servlet_Controller extends HttpServlet {
     public void insertarRegistro(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         lstErrores.clear();
+        boolean ok = false;
+        boolean noCompletado = false;
         String expresionNombre = "^[a-zA-Z áéíóúÁÉÍÓÚñÑs]*$";
 
         try {
@@ -107,10 +111,13 @@ public class Servlet_Controller extends HttpServlet {
                 rd.forward(request, response);
             } else {
                 if (personaDAO.insertarRegistro(persona) > 0) {
-
-                    request.getSession().setAttribute("resultado", "Se registró exitosamente.");
+                    ok = true;
+                    request.getSession().setAttribute("ok", ok);
+                    request.getSession().setAttribute("mensaje", "Se registró exitosamente.");
                 } else {
-                    request.getSession().setAttribute("fracaso", "No se pudo registrar.");
+                    noCompletado = true;
+                    request.getSession().setAttribute("noCompletado", noCompletado);
+                    request.getSession().setAttribute("mensaje", "No se pudo registrar.");
                 }
                 response.sendRedirect(context + "/Servlet_Controller?op=registros");
             }
@@ -120,6 +127,28 @@ public class Servlet_Controller extends HttpServlet {
             throwables.printStackTrace();
         }
 
+    }
+
+    private void eliminarRegistro(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            boolean ok = false;
+            boolean noCompletado = false;
+            int id = Integer.parseInt(request.getParameter("id"));
+            if (personaDAO.eliminarRegistro(id) > 0) {
+                ok = true;
+                request.getSession().setAttribute("ok", ok);
+                request.getSession().setAttribute("mensaje", "El registro se elimino exitosamente.");
+            } else {
+                noCompletado = true;
+                request.getSession().setAttribute("noCompletado", noCompletado);
+                request.getSession().setAttribute("mensaje", "El registro no se pudo eliminar.");
+            }
+            response.sendRedirect(context + "/Servlet_Controller?op=registros");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override

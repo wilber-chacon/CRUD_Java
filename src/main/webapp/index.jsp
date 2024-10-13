@@ -4,8 +4,6 @@
 <head>
     <title>Inicio</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js" ></script>
-
 </head>
 <body style="background-color: #dddcdc;">
 <div class="container shadow bg-white rounded mt-5 pt-5">

@@ -56,4 +56,20 @@ public class PersonaDAO extends Conexion{
         return 0;
     }
 
+    public int eliminarRegistro(int id) throws SQLException {
+        try {
+            conectar();
+            query = "DELETE FROM persona WHERE id_persona=?";
+            st = conexion.prepareStatement(query);
+            st.setInt(1, id);
+            return st.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }finally {
+            desconectar();
+        }
+
+        return 0;
+    }
+
 }
