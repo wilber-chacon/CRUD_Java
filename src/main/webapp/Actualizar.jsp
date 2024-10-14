@@ -14,7 +14,7 @@
 <br/>
 <section class='container-sm mr-3 ml-3 pr-3 pl-3 pb-5' style="background-color: white; height: auto;">
     <div class="form-control p-4" style="width: 50%; margin: 10px auto; box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); background-color: #D2EBE4;">
-        <h3 class="text-center text-success">Registrar persona</h3>
+        <h3 class="text-center text-success">Actualizar registro</h3>
         <br/>
         <br/>
         <c:if test="${not empty requestScope.lstErrores}">
@@ -35,8 +35,8 @@
             <div class="form-group">
                 <label for="genero" class="text-success"><span class="text-danger">* </span> Genero:</label>
                 <div class="input-group">
-                    <select name="genero" id="genero" value="${persona.sexo_persona}" class="form-control" required>
-                        <option value="Masculino" id="Masculino" selected>Masculino</option>
+                    <select name="genero" id="genero" class="form-control" required>
+                        <option value="Masculino" id="Masculino">Masculino</option>
                         <option value="Femenino" id="Femenino">Femenino</option>
                     </select>
                 </div>
@@ -60,7 +60,8 @@
             <p><span class="text-danger">* </span>Los campos son requeridos.</p>
             <span STYLE="display: none;" class="text-danger" id="alertaCampos">Complete los campos requeridos.</span>
             <div class="form-group">
-                <input type="hidden" name="op" value="insertarRegistro" />
+                <input type="hidden" name="id" value="${persona.id_persona}" />
+                <input type="hidden" name="op" value="actualizarRegistro" />
                 <input type="submit" id="btnEnviar" name="submit" class="btn btn-success" form="save-form" value="Enviar" style="width: 40%;">
                 <a href="${context}/Servlet_Controller?op=registros" style='cursor: pointer; float: right; width: 40%;' class='btn btn-warning text-white'>Regresar</a>
             </div>

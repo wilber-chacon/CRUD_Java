@@ -6,6 +6,8 @@
     <title>Registros</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/sweetalert2/sweetalert2.css">
+    <link rel="stylesheet" href="resources/datatables/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="resources/datatables/select.dataTables.min.css">
 </head>
 <body style="background-color: #dddcdc;">
 <section class='container-sm m-3 p-5 rounded shadow' style="background-color: white; height: auto;">
@@ -18,7 +20,7 @@
     <br/>
     <br/>
     <br/>
-<table BORDER class='table'>
+<table class="table row-bordered table table-striped table-hover dataTable" id="dataTable" width="100%" cellspacing="0" style="white-space: nowrap; overflow-x: auto;">
     <thead class='text-white bg-info'>
     <tr>
         <th scope='col'>ID</th>
@@ -41,7 +43,7 @@
                 <td>${reg.getOcupacion().getOcupacion()}</td>
                 <td>${reg.getFecha_nac()}</td>
                 <td class="text-center">
-                    <a class="btn btn-warning" href="${context}/Controller?op=obtenerRegistro&id=${reg.getId_persona()}">Editar</a>
+                    <a class="btn btn-warning" href="${context}/Servlet_Controller?op=obReg&id=${reg.getId_persona()}">Editar</a>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#EliminarModal" onclick="confirmacionEliminar('${reg.getId_persona()}')">
                         Eliminar
                     </button>
@@ -79,6 +81,10 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="resources/datatables/datatables.min.js"></script>
+<script src="resources/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="resources/datatables/dataTables.select.min.js"></script>
+<script src="resources/datatables/datatables-ini.js"></script>
 <script src="resources/sweetalert2/sweetalert2.js"></script>
 <script src="resources/js/action.js"/></script>
 <script>
