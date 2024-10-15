@@ -24,7 +24,7 @@ Pantalla de bienvenida.</br></br>
 ![image](https://github.com/user-attachments/assets/abb185d4-afa1-4925-b8c8-9f5cbb1b80b3)</br></br>
 
 Pantalla de inicio con una tabla para visualizar los registros almacenados en la base de datos.</br></br>
-![image](https://github.com/user-attachments/assets/a0451a2b-505c-4ec0-aa7c-9f0ba268d5ac)</br></br>
+![image](https://github.com/user-attachments/assets/3300b20d-a654-44dc-9024-91230c89e872)</br></br>
 
 Pantalla para agregar un nuevo registro.</br></br>
 ![image](https://github.com/user-attachments/assets/81fedd66-b94f-4dfd-ad6e-b28d55c9d791)</br></br>
