@@ -4,22 +4,27 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//Clase utilizada para establecer la conexion hacia la base de datos
 public class Conexion {
 
-    // JDBC driver name and database URL
+    // nombre del driver JDBC
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+
+    //URL para la conexión a la base de datos
     static final String DB_URL = "jdbc:mysql://localhost:3306/personabdd";
-    // Database credentials
+
+    // credenciales de la base de datos (solo para trabajo local y pruebas de bajo riesgo)
     static final String USER = "root";
     static final String PASS = "";
 
-    Connection conexion =null;
+    Connection conexion =null; //variable que almacena la conexion
 
     Statement stmt = null;
     PreparedStatement st = null;
     ResultSet rs = null;
     public String query="";
 
+    //Metodo constructor de la clase
     public Conexion() {
         this.conexion = null;
         this.st = null;
@@ -28,10 +33,11 @@ public class Conexion {
     }
 
 
+    //Metodo para establecer la conexion con la base de datos
     public void conectar(){
         try
         {
-            //Driver de para mysql
+            //Driver para mysql
             Class.forName(JDBC_DRIVER);
             // Conexion con la base de datos
             conexion = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -43,6 +49,8 @@ public class Conexion {
         }
     }
 
+
+    //Metodo para cerra la sesion con la base de datos
     public void desconectar() throws SQLException {
 
         if (rs != null) {

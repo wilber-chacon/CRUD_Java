@@ -5,7 +5,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Nuevo registro</title>
+    <title>Actualizar registro</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>

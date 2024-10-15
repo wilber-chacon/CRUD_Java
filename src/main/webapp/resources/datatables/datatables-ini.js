@@ -3,8 +3,8 @@ $(document).ready(function () {
     select: true,
     scrollX: true,
     lengthMenu: [
-      [10, 25, 50, -1],
-      [10, 25, 50, "Mostrar Todo"],
+      [5, 10, 25, 50, -1],
+      [5, 10, 25, 50, "Mostrar Todo"],
     ],
 
     language: {

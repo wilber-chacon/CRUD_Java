@@ -23,7 +23,6 @@
 <table class="table row-bordered table table-striped table-hover dataTable" id="dataTable" width="100%" cellspacing="0" style="white-space: nowrap; overflow-x: auto;">
     <thead class='text-white bg-info'>
     <tr>
-        <th scope='col'>ID</th>
         <th scope='col'>Nombre</th>
         <th scope='col'>Edad</th>
         <th scope='col'>Genero</th>
@@ -36,7 +35,6 @@
     <c:if test="${not empty requestScope.listaRegistros}">
         <c:forEach var="reg" items="${requestScope.listaRegistros}">
             <tr>
-                <td>${reg.getId_persona()}</td>
                 <td>${reg.getNombre_persona()}</td>
                 <td>${reg.getEdad_persona()}</td>
                 <td>${reg.getSexo_persona()}</td>

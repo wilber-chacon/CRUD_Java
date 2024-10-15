@@ -2,14 +2,16 @@ package com.crudjava.Bean;
 
 import java.sql.Date;
 
+//CLase Bean utilizada para almacenar los datos de personas
 public class Persona {
-    private int id_persona;
-    private String nombre_persona;
-	private int edad_persona;
-	private String sexo_persona;
-	private Ocupacion ocupacion;
-	private Date fecha_nac;
+    private int id_persona; //guarda el identificador del registro
+    private String nombre_persona; //guarda el nombre de la persona
+	private int edad_persona; //guarda la edad de la persona
+	private String sexo_persona; //guarda el genero de la persona
+	private Ocupacion ocupacion; //guarda la ocupacion de la persona
+	private Date fecha_nac;//guarda la fehca de nacimiento de la persona
 
+    //Metodo constructor de la clase
     public Persona() {
         this.id_persona = 0;
         this.nombre_persona = "";
@@ -19,15 +21,8 @@ public class Persona {
         this.fecha_nac = null;
     }
 
-    public Persona(int id_persona, String nombre_persona, int edad_persona, String sexo_persona, Ocupacion ocupacion, Date fecha_nac) {
-        this.id_persona = id_persona;
-        this.nombre_persona = nombre_persona;
-        this.edad_persona = edad_persona;
-        this.sexo_persona = sexo_persona;
-        this.ocupacion = ocupacion;
-        this.fecha_nac = fecha_nac;
-    }
 
+    //Metodos getter y setter utilizados para recuperar y asignar informacion en los atributos de la clase
     public int getId_persona() {
         return id_persona;
     }
