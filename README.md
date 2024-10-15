@@ -29,9 +29,6 @@ Pantalla de inicio con una tabla para visualizar los registros almacenados en la
 Pantalla para agregar un nuevo registro.</br></br>
 ![image](https://github.com/user-attachments/assets/81fedd66-b94f-4dfd-ad6e-b28d55c9d791)</br></br>
 
-Pantalla para agregar un nuevo registro.</br></br>
-![image](https://github.com/user-attachments/assets/81fedd66-b94f-4dfd-ad6e-b28d55c9d791)</br></br>
-
 Pantalla para actualizar los datos de un registro.</br></br>
 ![image](https://github.com/user-attachments/assets/94ab4547-d7e4-4b98-bbfc-64c715a5770b)</br></br>
 
