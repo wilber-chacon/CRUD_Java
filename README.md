@@ -14,7 +14,6 @@ Aplicación desarrollada en leguaje Java que permite realizar las operaciones de
 •	JavaServer Pages</br>
 •	JSTL (JSP Standard Tag Library) v 2.0.0</br>
 •	Apache Tomcat V 10.0.17</br>
-•	Apache Tomcat V 10.0.17</br>
 •	Motor de base de datos Mysql v 5.7.36</br>
 •	<a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/" target="_blank">Bootstrap</a> v 4.x</br>
 •	<a href="https://sweetalert2.github.io/" target="_blank">SweetAlert2</a> v 11.4.0</br>
