@@ -5,7 +5,8 @@ Aplicación desarrollada en leguaje Java que permite realizar las operaciones de
 •	Inserción de nuevos registros por medio de consultas SQL parametrizadas.</br>
 •	Visualización de toda la información almacenada en la base de datos.</br>
 •	Actualización de registros.</br>
-•	Eliminación de información.</br></br>
+•	Eliminación de información.</br>
+•	Validar la información ingresada en el formulario en el lado del cliente con expresiones regulares y desde el servidor (controlador) por medio de métodos java.</br></br>
 
 
 <b>Tecnologías:</b></br>
